@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi PWA Saya</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Datang di Aplikasi PWA Saya!</h1>
+    <p>Ini adalah contoh aplikasi PWA sederhana.</p>
+    <button id="btn">Klik Saya</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Daftarkan Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker Terdaftar'))
+        .catch(err => console.log('Gagal Mendaftarkan Service Worker:', err));
+    }
+  </script>
+</body>
+</html>
